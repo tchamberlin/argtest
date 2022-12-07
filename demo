@@ -1,0 +1,15 @@
+#!/bin/bash
+
+scriptdir="$(dirname "$(readlink -f "$0")")"
+PATH="$scriptdir":$PATH
+
+function argtest() {
+    set -x
+    argtest.py "$@"
+    set +x
+}
+
+
+# EXAMPLE 1
+echo "Example 1"
+argtest foo
